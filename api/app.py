@@ -1,11 +1,37 @@
-from chalice import Chalice
+from chalice import Chalice, Response
+import boto3
+import json
 
-app = Chalice(app_name='api')
+app = Chalice(app_name='GameMasterAPI')
+
+
+@app.route('/test')
+def index():
+    return Response(status_code=200,
+                    body=json.dumps({'Message': 'Hello World'}))
 
 
 @app.route('/')
-def index():
-    return {'hello': 'world'}
+def characters():
+    '''
+    Fetches all characters in the DB
+    TODO: set max possible returned chars to 100
+    '''
+    try:
+        table = boto3.resource('dynamodb').Table('GameMasterCharacters')
+    except Exception as e:
+        print(e)
+        return Response(status_code=500,
+                        body=json.dumps({'Error': 'Server Error'}))
+    try:
+        response = table.scan(Select='ALL_ATTRIBUTES')
+        print('here we are')
+        print(response)
+        return Response(status_code=200, body=json.dumps(reponse['Items']))
+    except Exception as e:
+        print(e)
+        return Response(status_code=500,
+                        body=json.dumps({'Error': 'Server Error'}))
 
 
 # The view function above will return {"hello": "world"}
