@@ -184,6 +184,27 @@ jsii = ">=1.31.0,<2.0.0"
 publication = ">=0.0.3"
 
 [[package]]
+name = "aws-cdk.aws-dynamodb"
+version = "1.119.0"
+description = "The CDK Construct Library for AWS::DynamoDB"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+"aws-cdk.aws-applicationautoscaling" = "1.119.0"
+"aws-cdk.aws-cloudwatch" = "1.119.0"
+"aws-cdk.aws-iam" = "1.119.0"
+"aws-cdk.aws-kinesis" = "1.119.0"
+"aws-cdk.aws-kms" = "1.119.0"
+"aws-cdk.aws-lambda" = "1.119.0"
+"aws-cdk.core" = "1.119.0"
+"aws-cdk.custom-resources" = "1.119.0"
+constructs = ">=3.3.69,<4.0.0"
+jsii = ">=1.31.0,<2.0.0"
+publication = ">=0.0.3"
+
+[[package]]
 name = "aws-cdk.aws-ec2"
 version = "1.119.0"
 description = "The CDK Construct Library for AWS::EC2"
@@ -310,6 +331,24 @@ python-versions = ">=3.6"
 [package.dependencies]
 "aws-cdk.core" = "1.119.0"
 "aws-cdk.region-info" = "1.119.0"
+constructs = ">=3.3.69,<4.0.0"
+jsii = ">=1.31.0,<2.0.0"
+publication = ">=0.0.3"
+
+[[package]]
+name = "aws-cdk.aws-kinesis"
+version = "1.119.0"
+description = "The CDK Construct Library for AWS::Kinesis"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+"aws-cdk.aws-cloudwatch" = "1.119.0"
+"aws-cdk.aws-iam" = "1.119.0"
+"aws-cdk.aws-kms" = "1.119.0"
+"aws-cdk.aws-logs" = "1.119.0"
+"aws-cdk.core" = "1.119.0"
 constructs = ">=3.3.69,<4.0.0"
 jsii = ">=1.31.0,<2.0.0"
 publication = ">=0.0.3"
@@ -577,6 +616,38 @@ jsii = ">=1.31.0,<2.0.0"
 publication = ">=0.0.3"
 
 [[package]]
+name = "boto3"
+version = "1.18.26"
+description = "The AWS SDK for Python"
+category = "main"
+optional = false
+python-versions = ">= 3.6"
+
+[package.dependencies]
+botocore = ">=1.21.26,<1.22.0"
+jmespath = ">=0.7.1,<1.0.0"
+s3transfer = ">=0.5.0,<0.6.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
+
+[[package]]
+name = "botocore"
+version = "1.21.26"
+description = "Low-level, data-driven core of boto 3."
+category = "main"
+optional = false
+python-versions = ">= 3.6"
+
+[package.dependencies]
+jmespath = ">=0.7.1,<1.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = ">=1.25.4,<1.27"
+
+[package.extras]
+crt = ["awscrt (==0.11.24)"]
+
+[[package]]
 name = "cattrs"
 version = "1.7.1"
 description = "Composable complex class support for attrs and dataclasses."
@@ -598,6 +669,14 @@ python-versions = ">=3.6"
 [package.dependencies]
 jsii = ">=1.33.0,<2.0.0"
 publication = ">=0.0.3"
+
+[[package]]
+name = "jmespath"
+version = "0.10.0"
+description = "JSON Matching Expressions"
+category = "main"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "jsii"
@@ -633,6 +712,20 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "s3transfer"
+version = "0.5.0"
+description = "An Amazon S3 Transfer Manager"
+category = "main"
+optional = false
+python-versions = ">= 3.6"
+
+[package.dependencies]
+botocore = ">=1.12.36,<2.0a.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.20.29,<2.0a.0)"]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -648,10 +741,23 @@ category = "main"
 optional = false
 python-versions = "*"
 
+[[package]]
+name = "urllib3"
+version = "1.26.6"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+
+[package.extras]
+brotli = ["brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "0b23adf86c4dbef1533d3a219199d9bcfab5d82856e9770f24b6f1d99d48309a"
+content-hash = "c883f40c618efd6e0e7487f74dd1ee1f65dc8616c45209cbc1a79ef3dcffea2a"
 
 [metadata.files]
 attrs = [
@@ -698,6 +804,10 @@ attrs = [
     {file = "aws-cdk.aws-cognito-1.119.0.tar.gz", hash = "sha256:d525bf1f179c893024e156cb373692ff1390bf6f60682a9e29801864e49f7262"},
     {file = "aws_cdk.aws_cognito-1.119.0-py3-none-any.whl", hash = "sha256:d7c79a54fc6e69fe9cb3fb3f26277b6c3c7b931ad220cc9a6ceca7490a58d53c"},
 ]
+"aws-cdk.aws-dynamodb" = [
+    {file = "aws-cdk.aws-dynamodb-1.119.0.tar.gz", hash = "sha256:6d8287904bff18cc45ec9a828973e4091a64b7fee641e72bae6a5461652d555c"},
+    {file = "aws_cdk.aws_dynamodb-1.119.0-py3-none-any.whl", hash = "sha256:865d767d21b88d57af2f0674b5414028c0de1cd20c25fbe86285f5742e3a47ca"},
+]
 "aws-cdk.aws-ec2" = [
     {file = "aws-cdk.aws-ec2-1.119.0.tar.gz", hash = "sha256:4beec4a0f16eed5846bd8c214df2db9693496643b36d509728544644bbb67452"},
     {file = "aws_cdk.aws_ec2-1.119.0-py3-none-any.whl", hash = "sha256:f6f2f8b8eedb7a32bdf8605dd042cea75f7d8471b1df697e0b21efe53c293eb1"},
@@ -725,6 +835,10 @@ attrs = [
 "aws-cdk.aws-iam" = [
     {file = "aws-cdk.aws-iam-1.119.0.tar.gz", hash = "sha256:1a22ce246add38edeadf791fde8e1df8b6a130a7e9010030690db7dbdfe39c78"},
     {file = "aws_cdk.aws_iam-1.119.0-py3-none-any.whl", hash = "sha256:b1adbc292f5408af5daccfbd0d20ab63ed1aa41d2706cb0d74b91d0fd2b2aeea"},
+]
+"aws-cdk.aws-kinesis" = [
+    {file = "aws-cdk.aws-kinesis-1.119.0.tar.gz", hash = "sha256:624bde32656684385950aa4d3ea76e8b2c0aa7bc7613f141c9ff19c7a58ff891"},
+    {file = "aws_cdk.aws_kinesis-1.119.0-py3-none-any.whl", hash = "sha256:e22d7d6c8ea99768375917663ecc9a6d01f2af1660da3f912b513e64e55da63a"},
 ]
 "aws-cdk.aws-kms" = [
     {file = "aws-cdk.aws-kms-1.119.0.tar.gz", hash = "sha256:884e29739db3b036f51eaac0e6cac1fc727ccf8236d046a9ccab1d0c6dee4b40"},
@@ -786,6 +900,14 @@ attrs = [
     {file = "aws-cdk.region-info-1.119.0.tar.gz", hash = "sha256:995986b85ad9dd835e9214574e4515e77bee76c7cba6acc50173c33299239e64"},
     {file = "aws_cdk.region_info-1.119.0-py3-none-any.whl", hash = "sha256:15ae8ece45ff08a304f9afc239796bc94d04f7e5a4b182a58527ba420fa7be14"},
 ]
+boto3 = [
+    {file = "boto3-1.18.26-py3-none-any.whl", hash = "sha256:3eedef0719639892dc263bed7adfc00821544388e3d86a6fa31d82f936a6b613"},
+    {file = "boto3-1.18.26.tar.gz", hash = "sha256:39ed0f5004b671e4a4241ae23023ad63674cd25f766bfe1617cfc809728bc3e0"},
+]
+botocore = [
+    {file = "botocore-1.21.26-py3-none-any.whl", hash = "sha256:37f77bf5f72c86d9b5f38e107c3822da66dbf0ef123768a6e80a58590c2796bf"},
+    {file = "botocore-1.21.26.tar.gz", hash = "sha256:911246faac450e13a3ef0e81993dd9bd9c282a7c0f4546bfe8cccf9649364cef"},
+]
 cattrs = [
     {file = "cattrs-1.7.1-py3-none-any.whl", hash = "sha256:d69bd4a3239e189f0740c3c41178dd0f00e4eac3bcb806937e49942fa83adfee"},
     {file = "cattrs-1.7.1.tar.gz", hash = "sha256:95265b8aaa45e6de75b5f52ae081e021a2a7a688babdb711e4174e6b18920d08"},
@@ -793,6 +915,10 @@ cattrs = [
 constructs = [
     {file = "constructs-3.3.129-py3-none-any.whl", hash = "sha256:30639a6f8fe52b989a47b49f468b2d1d9d798fd2ab052aa03c1dd26efc2efc82"},
     {file = "constructs-3.3.129.tar.gz", hash = "sha256:f5bfaf248aa0bf5985224f2cf1b9b8fd53f2687dc5359c4f0c8bb68361fe8d4a"},
+]
+jmespath = [
+    {file = "jmespath-0.10.0-py2.py3-none-any.whl", hash = "sha256:cdf6525904cc597730141d61b36f2e4b8ecc257c420fa2f4549bac2c2d0cb72f"},
+    {file = "jmespath-0.10.0.tar.gz", hash = "sha256:b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"},
 ]
 jsii = [
     {file = "jsii-1.33.0-py3-none-any.whl", hash = "sha256:0a5dc91a1c9f53d3bba6cc909a94fc2af71f4eb2a511f9a587824f7f48269952"},
@@ -806,6 +932,10 @@ python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
+s3transfer = [
+    {file = "s3transfer-0.5.0-py3-none-any.whl", hash = "sha256:9c1dc369814391a6bda20ebbf4b70a0f34630592c9aa520856bf384916af2803"},
+    {file = "s3transfer-0.5.0.tar.gz", hash = "sha256:50ed823e1dc5868ad40c8dc92072f757aa0e653a192845c94a3b676f4a62da4c"},
+]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
@@ -814,4 +944,8 @@ typing-extensions = [
     {file = "typing_extensions-3.10.0.0-py2-none-any.whl", hash = "sha256:0ac0f89795dd19de6b97debb0c6af1c70987fd80a2d62d1958f7e56fcc31b497"},
     {file = "typing_extensions-3.10.0.0-py3-none-any.whl", hash = "sha256:779383f6086d90c99ae41cf0ff39aac8a7937a9283ce0a414e5dd782f4c94a84"},
     {file = "typing_extensions-3.10.0.0.tar.gz", hash = "sha256:50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"},
+]
+urllib3 = [
+    {file = "urllib3-1.26.6-py2.py3-none-any.whl", hash = "sha256:39fb8672126159acb139a7718dd10806104dec1e2f0f6c88aab05d17df10c8d4"},
+    {file = "urllib3-1.26.6.tar.gz", hash = "sha256:f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"},
 ]
